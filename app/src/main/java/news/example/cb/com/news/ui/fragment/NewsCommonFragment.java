@@ -27,6 +27,7 @@ import news.example.cb.com.news.utils.MyLogUtil;
 import news.example.cb.com.news.view.CircleRefreshLayout;
 
 /**
+ * 新闻滑动界面，共用的一个fragment
  * Created by caobin on 2016/12/8.
  */
 public class NewsCommonFragment extends BaseFragment {
