@@ -2,21 +2,17 @@ package news.example.cb.com.news;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.view.View;
 
 import org.xutils.view.annotation.ContentView;
-import org.xutils.view.annotation.ViewInject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import news.example.cb.com.news.base.BaseActivity;
 import news.example.cb.com.news.ui.fragment.CareFragment;
 import news.example.cb.com.news.ui.fragment.HomeFragment;
 import news.example.cb.com.news.ui.fragment.MineFragment;
-import news.example.cb.com.news.view.NoScrollViewPager;
 
 /**
  *
@@ -24,17 +20,16 @@ import news.example.cb.com.news.view.NoScrollViewPager;
 @ContentView(R.layout.activity_main)
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
-    @ViewInject(R.id.view_pager)
-    private NoScrollViewPager mViewPager;
-
-    private FragmentPagerAdapter mPagerAdapter;
-    //将fragment添加到list中
-    private List<Fragment> fragmentList;
+    private Fragment homeFragment;//主页
+    private Fragment careFragment;//关注
+    private Fragment mineFragment;//我的
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
+        //默认加载主页
+        selectFragment(0);
     }
 
     /**
@@ -44,33 +39,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.rb_home).setOnClickListener(this);
         findViewById(R.id.rb_care).setOnClickListener(this);
         findViewById(R.id.rb_mine).setOnClickListener(this);
-
-        //初始化fragmnet
-        fragmentList = new ArrayList<>();
-        Fragment homeFragment = new HomeFragment();
-        Fragment careFragment = new CareFragment();
-        Fragment mineFragment = new MineFragment();
-
-        fragmentList.add(homeFragment);
-        fragmentList.add(careFragment);
-        fragmentList.add(mineFragment);
-
-        //viewPager适配器
-        mPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
-            @Override
-            public Fragment getItem(int position) {
-                return fragmentList.get(position);
-            }
-
-            @Override
-            public int getCount() {
-                if (fragmentList == null) {
-                    return 0;
-                }
-                return fragmentList.size();
-            }
-        };
-        mViewPager.setAdapter(mPagerAdapter);
     }
 
     /**
@@ -83,19 +51,80 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.rb_home:
                 //主页
-                mViewPager.setCurrentItem(0, false);
+                selectFragment(0);
                 break;
             case R.id.rb_care:
                 //关注
-                mViewPager.setCurrentItem(1, false);
+                selectFragment(1);
                 break;
             case R.id.rb_mine:
                 //我的
-                mViewPager.setCurrentItem(2, false);
+                selectFragment(2);
                 break;
             default:
                 break;
 
+        }
+    }
+
+
+    /**
+     * 切换fragment
+     *
+     * @param i 第几个
+     */
+    private void selectFragment(int i) {
+        FragmentManager fm = getSupportFragmentManager();
+        //开启 Fragment事务
+        FragmentTransaction transaction = fm.beginTransaction();
+        hideFragment(transaction);
+        // 设置内容区域
+        switch (i) {
+            case 0:
+                if (homeFragment == null) {
+                    homeFragment = new HomeFragment();
+                    transaction.add(R.id.fragment_content, homeFragment);
+                } else {
+                    transaction.show(homeFragment);
+                }
+                break;
+            case 1:
+                if (careFragment == null) {
+                    careFragment = new CareFragment();
+                    transaction.add(R.id.fragment_content, careFragment);
+                } else {
+                    transaction.show(careFragment);
+
+                }
+                break;
+            case 2:
+                if (mineFragment == null) {
+                    mineFragment = new MineFragment();
+                    transaction.add(R.id.fragment_content, mineFragment);
+                } else {
+                    transaction.show(mineFragment);
+                }
+                break;
+            default:
+                break;
+        }
+        transaction.commit();
+    }
+
+    /**
+     * 隐藏fragment
+     *
+     * @param transaction
+     */
+    private void hideFragment(FragmentTransaction transaction) {
+        if (homeFragment != null) {
+            transaction.hide(homeFragment);
+        }
+        if (careFragment != null) {
+            transaction.hide(careFragment);
+        }
+        if (mineFragment != null) {
+            transaction.hide(mineFragment);
         }
     }
 
