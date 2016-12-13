@@ -9,12 +9,16 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"></FrameLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/pale_white"/>
 
     <RadioGroup
         android:id="@+id/rg_home_bottom"
         android:layout_width="match_parent"
         android:layout_height="43dp"
-        android:background="@color/white"
+        android:background="@color/color_f5f5f5"
         android:orientation="horizontal">
 
         <RadioButton

@@ -31,5 +31,5 @@ dependencies {
     compile 'org.xutils:xutils:3.3.38'
     compile 'com.android.support:design:23.4.0'
     compile files('libs/gson-2.2.4.jar')
-    compile 'com.github.recruit-lifestyle:WaveSwipeRefreshLayout:1.1'
+    compile 'com.xiaosu:pullLayout:1.4.2'
 }

@@ -23,7 +23,7 @@ import news.example.cb.com.news.view.MyViewPagerIndicator;
 /**
  * 主页
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends BaseFragment {
     private ViewPager mViewPager;
     private ViewPagerAdapter mAdapter;
     //滑动指示器
@@ -70,25 +70,6 @@ public class HomeFragment extends Fragment {
         //将指示器与pager绑定
         indicator.setDatas(navData);
         indicator.setViewPager(mViewPager);
-
-        /**
-         * 位置监听
-         */
-//        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-//            @Override
-//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-//                //用不到
-//            }
-//
-//            @Override
-//            public void onPageSelected(int position) {
-//                 MyLogUtil.d("weizhi :" + position);
-//            }
-//
-//            @Override
-//            public void onPageScrollStateChanged(int state) {
-//            }
-//        });
     }
 
     /**

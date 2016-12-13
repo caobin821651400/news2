@@ -70,7 +70,7 @@ public class NewsListAdapter extends BaseAdapter {
         }
         NewsResp.DataInfo resp = (NewsResp.DataInfo) getItem(position);
         viewHolder.title.setText(resp.getTitle());
-        viewHolder.date.setText(resp.getDate() + "      作者" + resp.getAuthor_name());
+        viewHolder.date.setText(resp.getAuthor_name()+ "          " + resp.getDate() );
         x.image().bind(viewHolder.imgTitle1, resp.getThumbnail_pic_s(),imageOptions);
         return view;
     }

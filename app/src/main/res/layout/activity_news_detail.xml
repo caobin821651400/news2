@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="news.example.cb.com.news.ui.NewsDetailActivity">
+    android:background="@color/gray"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,8 +19,19 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:background="@null"
-            android:padding="6dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
             android:src="@drawable/btn_left_back_select" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="新闻详情"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
         <ImageButton
             android:id="@+id/btn_news_details_right"
@@ -27,7 +39,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:background="@null"
-            android:padding="6dp"
+            android:paddingBottom="10dp"
+            android:paddingRight="5dp"
+            android:paddingTop="10dp"
             android:src="@drawable/btn_right_more_select" />
     </RelativeLayout>
 
@@ -35,8 +49,7 @@
     <WebView
         android:id="@+id/web_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="1dp">
+        android:layout_height="match_parent">
 
     </WebView>
 

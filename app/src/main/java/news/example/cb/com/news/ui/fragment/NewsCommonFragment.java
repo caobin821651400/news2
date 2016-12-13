@@ -6,10 +6,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
+import com.xiaosu.pulllayout.PullLayout;
+import com.xiaosu.pulllayout.base.BasePullLayout;
+import com.xiaosu.pulllayout.base.BasePullLayout.OnPullCallBackListener;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
@@ -23,20 +27,19 @@ import news.example.cb.com.news.base.BaseFragment;
 import news.example.cb.com.news.http.NewsResp;
 import news.example.cb.com.news.ui.NewsDetailActivity;
 import news.example.cb.com.news.ui.adapter.NewsListAdapter;
+import news.example.cb.com.news.utils.Constant;
 import news.example.cb.com.news.utils.MyLogUtil;
-import news.example.cb.com.news.view.CircleRefreshLayout;
 
 /**
  * 新闻滑动界面，共用的一个fragment
  * Created by caobin on 2016/12/8.
  */
-public class NewsCommonFragment extends BaseFragment {
+public class NewsCommonFragment extends BaseFragment{
     private ListView mListView;
     private NewsListAdapter mAdapter;
     private String type;
     //下拉刷新
-    private CircleRefreshLayout mRefreshLayout;
-
+    private PullLayout mPullLayout;
 
     /**
      * 创建新实例
@@ -51,6 +54,10 @@ public class NewsCommonFragment extends BaseFragment {
         return fragment;
     }
 
+    /**
+     * 在这里接受fragment之间传递的数据
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,29 +74,29 @@ public class NewsCommonFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView(view);
+        mPullLayout.autoRefreshOnCreate();
     }
 
     private void initView(View view) {
         mListView = (ListView) view.findViewById(R.id.list_view);
-        mRefreshLayout = (CircleRefreshLayout) view.findViewById(R.id.refresh_layout);
+        mPullLayout = (PullLayout) view.findViewById(R.id.mPullLayout);
         mAdapter = new NewsListAdapter(getActivity());
         mListView.setAdapter(mAdapter);
 
+        mPullLayout.setOnPullListener(new OnPullCallBackListener() {
+            @Override
+            public void onRefresh() {
+                //下拉刷新
+                initData(type);
+            }
 
-        mRefreshLayout.setOnRefreshListener(
-                new CircleRefreshLayout.OnCircleRefreshListener() {
-                    @Override
-                    public void refreshing() {
-                        // 开始刷新，
-                        initData(type);
-                    }
-
-                    @Override
-                    public void completeRefresh() {
-                        // 刷新完成
-                    }
-                });
-
+            @Override
+            public void onLoad() {
+                //上拉加载更多逻辑，
+                // 应为返回数据中没有将数据分割，直接显示全部，所以没办法用。
+                MyLogUtil.d("下拉完成");
+            }
+        });
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -101,13 +108,12 @@ public class NewsCommonFragment extends BaseFragment {
         });
     }
 
-
     /**
      * 请求网路数据
      * type  是请求类型  top头条  guonei国内 .....
      */
     private void initData(String type) {
-        RequestParams params = new RequestParams("http://v.juhe.cn/toutiao/index");
+        RequestParams params = new RequestParams(Constant.NEWS_API_URL);
         params.addBodyParameter("type", type);
         //申请的key
         params.addBodyParameter("key", "f323c09a114635eb935ed8dd19f7284e");
@@ -118,6 +124,8 @@ public class NewsCommonFragment extends BaseFragment {
              */
             @Override
             public void onSuccess(String result) {
+                //当数据加载完成，取消刷新
+                mPullLayout.finishPull();
                 List<NewsResp.DataInfo> list = new ArrayList<>();
                 for (NewsResp.DataInfo item : parseGson(result).getResult().getData()) {
                     list.add(item);

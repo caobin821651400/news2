@@ -3,6 +3,7 @@ package news.example.cb.com.news.base;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
@@ -15,6 +16,8 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //无title，自定义
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         //初始化xutils
         x.view().inject(this);
         //全屏显示
