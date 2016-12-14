@@ -6,9 +6,10 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="我是我的"
+        android:layout_height="200dp"
         android:gravity="center"
+        android:fitsSystemWindows="true"
+        android:background="@drawable/wang_yi_draw_bg"
         android:textColor="@color/red"
         android:textSize="35sp" />
 

@@ -36,4 +36,6 @@
         <!--头部箭头颜色-->
         <item name="refreshArrowColor">@color/white</item>
     </style>
+
+    <style name="ColorTranslucentTheme" parent="AppTheme"></style>
 </resources>

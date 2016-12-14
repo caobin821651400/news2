@@ -8,11 +8,13 @@
         android:id="@+id/fragment_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@color/white"
         android:layout_weight="1"></FrameLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/pale_white"/>
+        android:background="@color/pale_white" />
 
     <RadioGroup
         android:id="@+id/rg_home_bottom"

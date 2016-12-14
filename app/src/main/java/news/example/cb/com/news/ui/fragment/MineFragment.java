@@ -1,11 +1,14 @@
 package news.example.cb.com.news.ui.fragment;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.google.gson.Gson;
 
@@ -24,8 +27,12 @@ import news.example.cb.com.news.utils.Constant;
 public class MineFragment extends BaseFragment {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.mine_tab, container, false);
         return v;
     }
