@@ -23,8 +23,7 @@
         android:id="@+id/image_info_1"
         android:layout_width="match_parent"
         android:layout_height="140dp"
-        android:layout_marginTop="5dp"
-        android:src="@drawable/caobin" />
+        android:layout_marginTop="5dp" />
 
 
     <TextView

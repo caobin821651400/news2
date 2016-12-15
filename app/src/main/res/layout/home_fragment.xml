@@ -2,17 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:background="@color/wang_yi_title_bg"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
-
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:fitsSystemWindows="true"
-        android:background="@color/wang_yi_title_bg">
+        android:background="@color/wang_yi_title_bg"
+        android:fitsSystemWindows="true">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -36,31 +35,26 @@
                 android:paddingRight="5dp"
                 android:src="@drawable/setting" />
         </RelativeLayout>
-
     </android.support.v7.widget.Toolbar>
 
     <!--导航栏-->
-    <LinearLayout
+    <news.example.cb.com.news.view.MyViewPagerIndicator
+        android:id="@+id/view_pager_indicator"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center">
+        android:layout_height="40dp">
 
-        <news.example.cb.com.news.view.MyViewPagerIndicator
-            android:id="@+id/view_pager_indicator"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    </news.example.cb.com.news.view.MyViewPagerIndicator>
 
-        </news.example.cb.com.news.view.MyViewPagerIndicator>
-    </LinearLayout>
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/pale_white1" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:background="@color/white"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
     </android.support.v4.view.ViewPager>
-
-
 </LinearLayout>
