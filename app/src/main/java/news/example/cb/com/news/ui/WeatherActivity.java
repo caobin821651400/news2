@@ -97,7 +97,7 @@ public class WeatherActivity extends BaseActivity {
                 //intent传递数据时用
                 hint = info.getGanmao();
                 city = info.getCity();
-                
+
                 //显示数据
                 tv_weather_message.setText("温馨提示：" + info.getGanmao());
                 tv_temperature.setText(info.getWendu());

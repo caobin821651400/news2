@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+    <!--标题-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/color_f5f5f5"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/btn_news_details_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:background="@null"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:src="@drawable/btn_left_back_select" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="设置"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/pale_white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="13dp"
+                android:drawableRight="@drawable/ic_right_orientation"
+                android:gravity="center_vertical"
+                android:paddingRight="10dp"
+                android:text="编辑资料"
+                android:textColor="@color/xiang_ya_black"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="13dp"
+                android:background="@color/pale_white1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="13dp"
+                android:drawableRight="@drawable/ic_right_orientation"
+                android:gravity="center_vertical"
+                android:paddingRight="10dp"
+                android:text="账号和绑定设置"
+                android:textColor="@color/xiang_ya_black"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="13dp"
+                android:background="@color/pale_white1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="13dp"
+                android:drawableRight="@drawable/ic_right_orientation"
+                android:gravity="center_vertical"
+                android:paddingRight="10dp"
+                android:text="黑名单"
+                android:textColor="@color/xiang_ya_black"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/pale_white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="13dp"
+                android:drawableRight="@drawable/ic_right_orientation"
+                android:gravity="center_vertical"
+                android:paddingRight="10dp"
+                android:text="清除缓存"
+                android:textColor="@color/xiang_ya_black"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="13dp"
+                android:background="@color/pale_white1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="13dp"
+                android:drawableRight="@drawable/ic_right_orientation"
+                android:gravity="center_vertical"
+                android:paddingRight="10dp"
+                android:text="字体大小"
+                android:textColor="@color/xiang_ya_black"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="13dp"
+                android:background="@color/pale_white1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="13dp"
+                android:drawableRight="@drawable/ic_right_orientation"
+                android:gravity="center_vertical"
+                android:paddingRight="10dp"
+                android:text="列表显示摘要"
+                android:textColor="@color/xiang_ya_black"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="13dp"
+                android:background="@color/pale_white1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="13dp"
+                android:drawableRight="@drawable/ic_right_orientation"
+                android:gravity="center_vertical"
+                android:paddingRight="10dp"
+                android:text="非wifi网络流量"
+                android:textColor="@color/xiang_ya_black"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="13dp"
+                android:background="@color/pale_white1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="13dp"
+                android:drawableRight="@drawable/ic_right_orientation"
+                android:gravity="center_vertical"
+                android:paddingRight="10dp"
+                android:text="推送通知"
+                android:textColor="@color/xiang_ya_black"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/pale_white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="13dp"
+                android:drawableRight="@drawable/ic_right_orientation"
+                android:gravity="center_vertical"
+                android:paddingRight="10dp"
+                android:text="离线下载"
+                android:textColor="@color/xiang_ya_black"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="13dp"
+                android:background="@color/pale_white1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="13dp"
+                android:drawableRight="@drawable/ic_right_orientation"
+                android:gravity="center_vertical"
+                android:paddingRight="10dp"
+                android:text="检查版本"
+                android:textColor="@color/xiang_ya_black"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="#E6E6E6" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@color/pale_white"
+                android:gravity="center"
+                android:text="退出登录"
+                android:textColor="@color/wang_yi_title_bg"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E6E6E6"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:text="我的头条用户协议"
+                    android:textColor="@color/color_0176da"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="Cie 头条网 baidu.com"
+                    android:textColor="@color/gray"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="v6.1.0 Build 34fsdf_jrjerj_20160502"
+                    android:textColor="@color/gray"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

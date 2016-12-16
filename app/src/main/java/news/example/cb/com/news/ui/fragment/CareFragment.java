@@ -1,26 +1,13 @@
 package news.example.cb.com.news.ui.fragment;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-
-import com.google.gson.Gson;
-
-import org.xutils.common.Callback;
-import org.xutils.http.RequestParams;
-import org.xutils.x;
 
 import news.example.cb.com.news.R;
 import news.example.cb.com.news.base.BaseFragment;
-import news.example.cb.com.news.http.WeatherResp;
-import news.example.cb.com.news.utils.Constant;
-import news.example.cb.com.news.utils.MyLogUtil;
 
 /**
  * 主页

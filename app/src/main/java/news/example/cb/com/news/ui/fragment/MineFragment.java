@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import news.example.cb.com.news.R;
 import news.example.cb.com.news.base.BaseFragment;
+import news.example.cb.com.news.ui.SettingActivity;
 import news.example.cb.com.news.ui.WeatherActivity;
 
 /**
@@ -35,6 +36,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
 
     private void initView(View view) {
         view.findViewById(R.id.btn_weather).setOnClickListener(this);
+        view.findViewById(R.id.btn_system_setting).setOnClickListener(this);
     }
 
     /**
@@ -47,6 +49,9 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.btn_weather:
                 launchActivity(WeatherActivity.class, null);
+                break;
+            case R.id.btn_system_setting:
+                launchActivity(SettingActivity.class, null);
                 break;
             default:
                 break;

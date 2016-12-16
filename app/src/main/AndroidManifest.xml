@@ -29,6 +29,9 @@
             android:theme="@style/ColorTranslucentTheme" />
         <activity
             android:name=".ui.WeatherHintActivity"
+            android:theme="@style/ColorTranslucentTheme" />
+        <activity
+            android:name=".ui.SettingActivity"
             android:theme="@style/ColorTranslucentTheme"></activity>
     </application>
 
