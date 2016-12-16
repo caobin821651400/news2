@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/qq_music_title_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="news.example.cb.com.news.ui.WeatherHintActivity">
+
+    <TextView
+        android:id="@+id/tv_city"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="35dp"
+        android:drawableLeft="@drawable/ic_point"
+        android:gravity="center_vertical"
+        android:text="温馨提示："
+        android:textColor="@color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:text="刚刚更新"
+        android:textColor="@color/pale_white1"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+</LinearLayout>

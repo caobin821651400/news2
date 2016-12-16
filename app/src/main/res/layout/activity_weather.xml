@@ -10,15 +10,17 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5.5"
+        android:layout_weight="5"
         android:background="@drawable/bg_sunny"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        android:gravity="center_vertical">
 
         <ImageButton
+            android:id="@+id/btn_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_margin="15dp"
+            android:layout_margin="14dp"
             android:background="@null"
             android:src="@drawable/setting" />
 
@@ -46,12 +48,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="5dp"
-                    android:textSize="15sp"
+                    android:layout_marginTop="10dp"
                     android:layout_toRightOf="@+id/tv_temperature"
+                    android:text="℃"
                     android:textColor="@color/white"
-                    android:text="℃" />
+                    android:textSize="16sp" />
 
             </RelativeLayout>
 
@@ -87,8 +89,49 @@
             android:layout_alignParentRight="true"
             android:layout_marginBottom="-50dp"
             android:src="@drawable/bg_sunny_tree" />
+
+        <LinearLayout
+            android:id="@+id/ll_weather_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/gre_line"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="8dp"
+                android:background="@null"
+                android:src="@drawable/ic_weather_message" />
+
+            <TextView
+                android:id="@+id/tv_weather_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:drawableRight="@drawable/ic_weather_right"
+                android:lines="1"
+                android:paddingRight="5dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/gre_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_above="@+id/ll_weather_detail"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:background="@color/pale_white" />
         <!--三个显示信息的tv-->
         <LinearLayout
+            android:id="@+id/ll_weather_detail"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_alignParentBottom="true"
@@ -109,7 +152,7 @@
                     android:layout_marginBottom="-5dp"
                     android:layout_weight="4"
                     android:gravity="center"
-                    android:text="风力"
+                    android:text="风 力"
                     android:textColor="@color/white"
                     android:textSize="11sp" />
 
@@ -195,6 +238,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4"></LinearLayout>
+        android:layout_weight="4">
 
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:listSelector="#00000000"
+            android:scrollbars="none">
+
+        </ListView>
+    </LinearLayout>
 </LinearLayout>
