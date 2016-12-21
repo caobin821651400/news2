@@ -86,6 +86,7 @@ public class WeatherActivity extends BaseActivity {
         final RequestParams params = new RequestParams(Constant.WEATHER_API_URL);
         //接一个参数，城市
         params.addBodyParameter("city", "成都");
+        showDLG();
         x.http().get(params, new Callback.CommonCallback<String>() {
 
             @Override
@@ -129,7 +130,7 @@ public class WeatherActivity extends BaseActivity {
 
             @Override
             public void onFinished() {
-
+                disMissDLG();
             }
         });
     }

@@ -74,6 +74,7 @@ public class NewsCommonFragment extends BaseFragment{
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView(view);
+        //一进入到界面就刷新
         mPullLayout.autoRefreshOnCreate();
     }
 
